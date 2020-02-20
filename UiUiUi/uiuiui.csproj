@@ -1,11 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PackageId>NerdyGentleman.UiUiUi.DesktopGL</PackageId>
-  <Version>0.1</Version>
-  <Authors>Lachlan Kingsford</Authors>
-  <Company>Nerdy Gentleman</Company>
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackageId>NerdyGentleman.UiUiUi.DesktopGL</PackageId>
+    <Version>0.1</Version>
+    <Authors>Lachlan Kingsford</Authors>
+    <Company>Nerdy Gentleman</Company>
   </PropertyGroup>
 
   <ItemGroup>
