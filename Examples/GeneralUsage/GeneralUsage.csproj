@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <MonoGameContentReference Include="**\*.mgcb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Content\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Monogame.Extended" Version="3.7.0" />
+    <PackageReference Include="Monogame.Framework.DesktopGL.Core" Version="3.8.0.2" />
+    <PackageReference Include="MonoGame.Content.Builder" Version="3.7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\UiUiUi\uiuiui.csproj" />
+  </ItemGroup>
+
+</Project>
