@@ -8,57 +8,135 @@ using Microsoft.Xna.Framework.Content;
 
 namespace UiUiUi
 {
+    /// <summary>
+    /// A reference to part of a monogame sprite that is used to draw to the screen.
+    /// </summary>
     public class SourceSprite
     {
+        /// <summary>
+        /// Name of the asset to load.
+        /// </summary>
+        /// <value></value>
         public string Asset { get; set; }
+        /// <summary>
+        /// The source left coordinate of the sprite to display.
+        /// </summary>
+        /// <value></value>
         public int Left { get; set; }
+        /// <summary>
+        /// The source top coordinate of the sprite to display.
+        /// </summary>
+        /// <value></value>
         public int Top { get; set; }
 
+        /// <summary>
+        /// The sprite itself to render, once loaded.
+        /// </summary>
+        /// <value></value>
         [XmlIgnore]
         public Texture2D Sprite { get; private set; }
+        /// <summary>
+        /// Load the Sprite with the name in the Asset from the content manager provided.
+        /// </summary>
+        /// <param name="content">Content manager to load the sprite off.</param>
         public void LoadSprite(ContentManager content)
         {
             Sprite = content.Load<Texture2D>(Asset);
         }
     }
 
-    public class Control
+    /// <summary>
+    /// A control to display on the interface.
+    /// </summary>
+        public class Control
     {
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public Control()
         {
             Controls = new List<Control>();
         }
 
-        // Left coordinate of the control relative to its parent
+        /// <summary>
+        /// Left coordinate of the control relative to its parent
+        /// </summary>
+        /// <value></value>
         public int Left { get; set; }
-        // Top coordinate of the control relative to its parent
+        /// <summary>
+        /// Top coordinate of the control relative to its parent
+        /// </summary>
+        /// <value></value>
         public int Top { get; set; }
-        // Width of control
+        /// <summary>
+        /// Width of control
+        /// </summary>
+        /// <value></value>
         public int Width { get; set; }
-        // Height of control
+        /// <summary>
+        /// Height of control
+        /// </summary>
+        /// <value></value>
         public int Height { get; set; }
-        // Left border before children/text inner control
+        /// <summary>
+        /// Left border before children/text inner control
+        /// </summary>
+        /// <value></value>
         public int LeftBorder {get; set; }
-        // Right border before children/text inner control
+        /// <summary>
+        /// Right border before children/text inner control
+        /// </summary>
+        /// <value></value>
         public int RightBorder {get; set;}
-        // Top border before children/text inner control
+        /// <summary>
+        /// Top border before children/text inner control
+        /// </summary>
+        /// <value></value>
         public int TopBorder{get; set; }
-        // Top border before children/text inner control
+        /// <summary>
+        /// Top border before children/text inner control
+        /// </summary>
+        /// <value></value>
         public int BottomBorder {get; set;}
-        // Default sprite
+        /// <summary>
+        /// Default sprite
+        /// </summary>
+        /// <value></value>
         public SourceSprite NormalSprite { get; set; }
-        // Sprite when mouse is down
+        /// <summary>
+        /// Sprite when mouse is down
+        /// </summary>
+        /// <value></value>
         public SourceSprite MouseDownSprite { get; set; }
-        // Sprite when mouse is over
+        /// <summary>
+        /// Sprite when mouse is over
+        /// </summary>
+        /// <value></value>
         public SourceSprite MouseOverSprite { get; set; }
-        // Sprite when control is active (for instance, text editable)
+        /// <summary>
+        /// Sprite when control is active (for instance, text editable)
+        /// </summary>
+        /// <value></value>
         public SourceSprite ActiveSprite { get; set; }
-        // Child controls of the control
+        /// <summary>
+        /// Child controls of the control
+        /// </summary>
+        /// <value></value>
         public List<Control> Controls { get; set; }
-        // Name of this contraol
+        /// <summary>
+        /// Name of this control
+        /// </summary>
+        /// <value></value>
         public string Name { get; set; }
-        // Text displayed on the control
+        /// <summary>
+        /// Text that is actually displayed on the control after processing (so, formatting, carets etc)
+        /// </summary>
+        /// <value></value>
         private string _text;
+        /// <summary>
+        /// Text that is displayed on the control
+        /// </summary>
+        /// <value></value>
         public string Text { get {return _text;}
             set
             {
@@ -69,43 +147,110 @@ namespace UiUiUi
                 }
             }
         }
-        // Font text is displayed in
+        /// <summary>
+        /// Font text is displayed in
+        /// </summary>
+        /// <value></value>
         protected SpriteFont SpriteFont;
-        // Name of SpriteFont SpriteFont is loaded from
+
+        /// <summary>
+        /// Name of SpriteFont SpriteFont is loaded from
+        /// </summary>
+        /// <value></value>
         public string Font { get; set; }
+
+        /// <summary>
+        /// Object that any data or events call
+        /// </summary>
+        /// <value></value>
         [XmlIgnore]
-        // Object that any data or events call
         protected object codeBehindObject;
-        // Values for which sprite should be in use
+
+        /// <summary>
+        /// Values for which sprite should be in use
+        /// </summary>
         public enum SpriteStates { Normal, MouseOver, MouseDown, Active }
-        // Which sprite should be in use
-        public SpriteStates SpriteState = SpriteStates.Normal;
-        // Values for Alignment of text on sprite
+
+        /// <summary>
+        /// Which sprite should be in use
+        /// </summary>
+        /// <value></value>
+        protected SpriteStates SpriteState = SpriteStates.Normal;
+
+        /// <summary>
+        /// Values for Alignment of text on sprite
+        /// </summary>
+        /// <value></value>
         public enum TextAlignments { Left, Right, Center }
-        // Alignment of text on sprite
+
+        /// <summary>
+        /// Alignment of text on sprite
+        /// </summary>
+        /// <value></value>
         public TextAlignments TextAlignment { get; set; }
-        // Values for vertical alignment of text on sprite
+
+        /// <summary>
+        /// Values for vertical alignment of text on sprite
+        /// </summary>
         public enum TextVAlignments { Top, Bottom, Center}
-        // Vertical text alignment
+
+        /// <summary>
+        /// Vertical text alignment
+        /// </summary>
+        /// <value></value>
         public TextVAlignments TextVAlignment { get; set; } = TextVAlignments.Center;
-        // Color of text on control
+
+        /// <summary>
+        /// Color of text on control
+        /// </summary>
+        /// <value></value>
         public Color TextColor { get; set; }
-        // I.E. Is it a text box?
+
+        /// <summary>
+        /// I.E. Is it a text box?
+        /// </summary>
+        /// <value></value>
         public bool TextEditable {get; set;}
-        // Character to use as cursor
+
+        /// <summary>
+        /// Character to use as cursor
+        /// </summary>
+        /// <value></value>
         public string TextCursor {get; set;} = "|";
-        // Current position of cursor
+
+        /// <summary>
+        /// Current position of cursor
+        /// </summary>
         private int Cursor;
-        // Last state that the mouse was in. Used for verifying new clicks.
+
+        /// <summary>
+        /// Last state that the mouse was in. Used for verifying new clicks.
+        /// </summary>
+        /// <value></value>
         [XmlIgnore]
-        public MouseState LastMouseState;
-        // Surface to render controls/text to
+        protected MouseState LastMouseState;
+
+        /// <summary>
+        /// Surface to render controls/text to
+        /// </summary>
         private RenderTarget2D controlsRenderTarget = null;
-        // How far the controls are 'scrolled' in the X dimension
+
+        /// <summary>
+        /// How far the controls are 'scrolled' in the X dimension
+        /// </summary>
         public int ControlOffsetX;
-        // How far the controls are 'scrolled' in the Y dimension
+
+        /// <summary>
+        /// How far the controls are 'scrolled' in the Y dimension
+        /// </summary>
         public int ControlOffsetY;
 
+        /// <summary>
+        /// Get the RenderTarget to render onto this control. Will create a new target if none yet
+        /// exists.
+        /// </summary>
+        /// <param name="device">Graphics device to create RenderTarget on</param>
+        /// <returns>A RenderTarget to draw on this control.</returns>
         protected RenderTarget2D GetRenderTarget(GraphicsDevice device)
         {
             var desiredWidth = Width - LeftBorder - RightBorder;
@@ -121,11 +266,23 @@ namespace UiUiUi
             return controlsRenderTarget;
         }
 
+        /// <summary>
+        /// Draw this control, and anything rendered on this control, onto a given rendertarget.
+        /// </summary>
+        /// <param name="device">Graphics device that is being used</param>
+        /// <param name="parentRenderTarget">
+        /// The render target belonging to the parent control, that this control is rendered onto.
+        /// </param>
+        /// <param name="controlOffsetX">
+        /// The vertical coordinate to offset the render by on the parent target in addition to the
+        /// control's left and top.
+        /// </param>
+        /// <param name="controlOffsetY">
+        /// The horizontal coordinate to offset the render by on the parent target in addition to
+        /// the control's left and top.
+        /// </param>
         public virtual void Draw(GraphicsDevice device, RenderTarget2D parentRenderTarget = null,
                                  int controlOffsetX = 0, int controlOffsetY = 0)
-        // Draw the control
-        // parentX and parentY are used as to be able to provide the relative
-        // location to draw the control in
         {
             if (!Visible)
             {
@@ -218,6 +375,11 @@ namespace UiUiUi
             }
         }
 
+        /// <summary>
+        /// Load the sprites for the control from the content manager. This is because sprites are
+        /// usually defined by their string name in the layout XML.
+        /// </summary>
+        /// <param name="content">App content manager to read sprites from</param>
         public virtual void LoadSprites(ContentManager content)
         {
             NormalSprite?.LoadSprite(content);
@@ -234,10 +396,18 @@ namespace UiUiUi
             }
         }
 
+        /// <summary>
+        /// Assign events to delegates based on the string name of the event as specified.
+        /// </summary>
+        /// <param name="codeBehindObject">
+        /// Object that contains functions to use as delegates.
+        /// </param>
+        /// <remarks>
+        /// This is because reflection can be an expensive operation, so this sets all of them at
+        /// once rather than reflecting each time it is triggered. This may be the best approach,
+        /// but also may change in the future.
+        /// </remarks>
         public virtual void AssignEvents(object codeBehindObject)
-        // This assigns events to their handlers in the code behind object
-        // I don't want to reflect each event - so doing it like this once
-        // and caching it
         {
             this.codeBehindObject = codeBehindObject;
             foreach (var control in Controls)
@@ -256,24 +426,83 @@ namespace UiUiUi
                 EnterKeyEvent = (EnterKeyDelegate)Delegate.CreateDelegate(typeof(EnterKeyDelegate), codeBehindObject, EnterKey);
         }
 
+        /// <summary>
+        /// Type of function to be called on an OnClick event.
+        /// </summary>
+        /// <param name="caller">The control that called the event.</param>
+        /// <param name="relativeX">Where this control was clicked relative to its location.</param>
+        /// <param name="relativeY">Where this control was clicked relative to its location.</param>
+        /// <param name="button">Button that was clicked</param>
         public delegate void OnClickDelegate(Control caller, int relativeX, int relativeY, MouseButton button);
+
+        /// <summary>
+        /// Function to call when a mouse button is clicked on the control. Clicking means mouse
+        /// down, followed by mouse up, when both are in the borders of the control.
+        /// </summary>
         [XmlIgnore]
         OnClickDelegate OnClickEvent;
-        public String OnClick { get; set; }
 
+        /// <summary>
+        /// String name of the function in the CodeBehind object to call on an OnClick event.
+        /// AssignEvents needs to be called before it will work.
+        /// </summary>
+        /// <remarks>
+        /// Should only be used when creating the Control from layout.
+        /// </remarks>
+        /// <value></value>
+        public String OnClick { private get; set; }
+
+        /// <summary>
+        /// Type of function to be called on an EnterKey event.
+        /// </summary>
+        /// <param name="caller">The control that called the event.</param>
         public delegate void EnterKeyDelegate(Control caller);
+
+        /// <summary>
+        /// Function to call when an Enter key is pushed down and pushed up while the control is
+        /// capturing keyboard input.
+        /// </summary>
         [XmlIgnore]
         EnterKeyDelegate EnterKeyEvent;
+
+        /// <summary>
+        /// String name of the function in the CodeBehind object to call on an EnterKey event.
+        /// AssignEvents needs to be called before it will work.
+        /// </summary>
+        /// <remarks>
+        /// Should only be used when creating the Control from layout.
+        /// </remarks>
+        /// <value></value>
         public String EnterKey { get; set; }
 
+        /// <summary>
+        /// Whether this control is visible and can be interacted with.
+        /// </summary>
+        /// <value></value>
         public bool Visible { get; set; } = true;
 
-        // Used for keeping track of multiple controls of same name
+        /// <summary>
+        /// A user definable index to allow multiple controls of the same name to exist and be
+        /// distinguished - for instance, when creating controls from a list.
+        /// </summary>
+        /// <value></value>
         public int Index {get; set;}
 
+        /// <summary>
+        /// Whether this control is in an active state. This means, for a textbox style control, that
+        /// it is accepting input.
+        /// </summary>
+        /// <value></value>
         [XmlIgnore]
         public bool Activated { get; private set;} = false;
 
+        /// <summary>
+        /// Whether the mouse is inside the borders of the control.
+        /// </summary>
+        /// <param name="translatedState">
+        /// The current mouse state, relative to the placement of the control.
+        /// </param>
+        /// <returns>True if the mouse is inside the control</returns>
         protected bool MouseInControl(MouseState translatedState)
         {
             return translatedState.X >= 0 &&
@@ -282,6 +511,13 @@ namespace UiUiUi
                    translatedState.Y <= Height;
         }
 
+        /// <summary>
+        /// Set the location of the cursor in an editable text control from where the mouse is.
+        /// </summary>
+        /// <param name="x">Relative X coordinate of the mouse.</param>
+        /// <param name="activated">
+        /// Whether the control is already activated (and showing a cursor)
+        /// </param>
         public void SetCursorFromMouse(int x, bool activated)
         {
             var textToRender = Text;
@@ -335,9 +571,16 @@ namespace UiUiUi
             Cursor = Text.Length;
         }
 
-        // Expand these as I add support for them
+        /// <summary>
+        /// Buttons of the mouse
+        /// </summary>
         public enum MouseButton { Left };
 
+        /// <summary>
+        /// Process the MouseState from the parent control, or monogame.
+        /// </summary>
+        /// <param name="state">The state of the mouse in relative terms.</param>
+        /// <returns></returns>
         public virtual bool ProcessMouse(MouseState state)
         {
             if (!Visible)
@@ -422,6 +665,9 @@ namespace UiUiUi
             return true;
         }
 
+        /// <summary>
+        /// Deactivate the control. This usually means no longer accepting keyboard input.
+        /// </summary>
         public virtual void Deactivate()
         {
 
@@ -429,13 +675,19 @@ namespace UiUiUi
             SpriteState = SpriteStates.Normal;
         }
 
+        /// <summary>
+        /// Deactivate the control. This usually means accepting keyboard input.
+        /// </summary>
         public virtual void Activate()
         {
             Activated = true;
             SpriteState = SpriteStates.Active;
         }
+        /// <summary>
+        /// The state of the keyboard in the previous cycle of the program.
+        /// </summary>
         [XmlIgnore]
-        public KeyboardState lastKeyboardState;
+        protected KeyboardState lastKeyboardState;
 
         /// <summary>
         /// Process keyboard events
@@ -573,6 +825,11 @@ namespace UiUiUi
             return true;
         }
 
+        /// <summary>
+        /// Recursively find a child control by name
+        /// </summary>
+        /// <param name="name">Name searching for</param>
+        /// <returns>The control, if found. null otherwise.</returns>
         public Control Find(string name)
         {
             foreach (var control in Controls)
