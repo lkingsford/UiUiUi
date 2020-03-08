@@ -1,0 +1,198 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/lachlan.kingsford/Personal/monogamesocktest/UiUiUi/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.Control.EnterKeyDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.Control.EnterKeyDelegate.html",
+          "hash": "X7dYhKYd9irc9CWkSajxMQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.Control.MouseButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.Control.MouseButton.html",
+          "hash": "ULwBtx2o/y4hJG2jMIHPNw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.Control.OnClickDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.Control.OnClickDelegate.html",
+          "hash": "DK+CuMngyYRRHrDcFBUrrg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.Control.SpriteStates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.Control.SpriteStates.html",
+          "hash": "L3Lu1NjngaDtiVWZVB8ONQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.Control.TextAlignments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.Control.TextAlignments.html",
+          "hash": "j9Ps9CJBB3chhEOOXTrgLA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.Control.TextVAlignments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.Control.TextVAlignments.html",
+          "hash": "0xRO4BLfRtsS05dyVyiwdQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.Control.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.Control.html",
+          "hash": "e4NQd+siJpU5uvMwdKyN4g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.SourceSprite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.SourceSprite.html",
+          "hash": "vUo5lzY6xsAq7N1fOePzsA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.Ui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.Ui.html",
+          "hash": "LvaphWaco9oW0xZ0ELPtgQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UiUiUi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UiUiUi.html",
+          "hash": "mF761+sIX4arH2zD0gZOMw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "uvcRvT7fLhm8d9bPgEFjbA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "vmuhRA9UFFUYUWIeb3Q3Qw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 10,
+          "skipped_file_count": 10
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
